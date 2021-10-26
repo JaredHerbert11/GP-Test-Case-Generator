@@ -1,20 +1,20 @@
 # Only 2 input functions
-add(1, sub(2, ARG0))
-mul(sub(3, ARG1),add(protectedDiv(sub(3,ARG0), add(ARG0, ARG1)),ARG1))
-add(sub(2, -4), mul(7, ARG1))
-protectedDiv(protectedDiv(ARG1, ARG0), -1)
-add(add(5, ARG1), ARG1)
+add(1, sub(2, v0))
+mul(sub(3, v1),add(protectedDiv(sub(3,v0), add(v0, v1)),v1))
+add(sub(2, -4), mul(7, v1))
+protectedDiv(protectedDiv(v1, v0), -1)
+add(add(5, v1), v1)
 
 # Arity 1 Only
-sin(ARG0)
-sin(cos(ARG0))
-neg(cos(sin(ARG0)))
+sin(v0)
+sin(cos(v0))
+neg(cos(sin(v0)))
 
 # Arity 1 and 2 combined
-sin(add(ARG1, ARG0))
-sin(sub(protectedDiv(sub(ARG1, ARG1), neg(ARG0)), cos(protectedDiv(2, 1))))
-add(sin(sub(sin(-4), ARG1)), protectedDiv(mul(ARG0, cos(ARG0)), mul(2, mul(ARG1, ARG1))))
-sub(mul(sin(ARG0), ARG0), ARG0)
+sin(add(v1, v0))
+sin(sub(protectedDiv(sub(v1, v1), neg(v0)), cos(protectedDiv(2, 1))))
+add(sin(sub(sin(-4), v1)), protectedDiv(mul(v0, cos(v0)), mul(2, mul(v1, v1))))
+sub(mul(sin(v0), v0), v0)
 
 # Arity 1, 2, and 3 combined
-if(sin(ARG0), add(ARG0, ARG1), sub(ARG0, ARG1))
+if(sin(v0), add(v0, v1), sub(v0, v1))
