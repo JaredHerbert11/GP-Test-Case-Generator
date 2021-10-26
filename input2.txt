@@ -1,0 +1,5 @@
+add(1, sub(2, x))
+mul(sub(3, y),add(protectedDiv(sub(3,x), add(x, y)),y))
+add(sub(2, -4), mul(7, y))
+protectedDiv(protectedDiv(y, x), -1)
+add(add(5, y), y)

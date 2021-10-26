@@ -1,0 +1,20 @@
+# Only 2 input functions
+add(1, sub(2, ARG0))
+mul(sub(3, ARG1),add(protectedDiv(sub(3,ARG0), add(ARG0, ARG1)),ARG1))
+add(sub(2, -4), mul(7, ARG1))
+protectedDiv(protectedDiv(ARG1, ARG0), -1)
+add(add(5, ARG1), ARG1)
+
+# Arity 1 Only
+sin(ARG0)
+sin(cos(ARG0))
+neg(cos(sin(ARG0)))
+
+# Arity 1 and 2 combined
+sin(add(ARG1, ARG0))
+sin(sub(protectedDiv(sub(ARG1, ARG1), neg(ARG0)), cos(protectedDiv(2, 1))))
+add(sin(sub(sin(-4), ARG1)), protectedDiv(mul(ARG0, cos(ARG0)), mul(2, mul(ARG1, ARG1))))
+sub(mul(sin(ARG0), ARG0), ARG0)
+
+# Arity 1, 2, and 3 combined
+if(sin(ARG0), add(ARG0, ARG1), sub(ARG0, ARG1))
