@@ -61,6 +61,43 @@ def write_reverse_notation(program_trees):
         postfix_file.write("\n")
     postfix_file.close()
 
+def infix_notation(program_tree, file):
+    """recursive helper function for following function"""
+    if(program_tree.leaf == 1):
+        if(program_tree.value[0] == "-"):
+            file.write("(" +  program_tree.value + ")")
+        else:
+            file.write(program_tree.value)
+    else:
+        op = ""
+        if (program_tree.value ==  "add"):
+            op = " + "
+        elif (program_tree.value ==  "sub"):
+            op = " - "
+        elif (program_tree.value ==  "mul"):
+            op = " * "
+        elif (program_tree.value ==  "protectedDiv"):
+            op = " / "
+        else:
+            print("Error, invalid infix operator")
+
+        file.write("(")
+        infix_notation(program_tree.children[0], file)
+        file.write(op)
+        infix_notation(program_tree.children[1], file)
+        file.write(")")
+
+#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+def write_infix_notation(program_trees):
+    """Takes a list of program trees and writes them in infix
+    notation to a txt file. Does so in operon format"""
+    infix_file = open('infix.txt', 'w')
+    for program_tree in program_trees:
+        infix_notation(program_tree, infix_file)
+        infix_file.write("\n")
+    infix_file.close()
+
+
 def create_opcodes(function_set, terminal_set, opcode_width):
     """Takes arrays containing the function and terminal sets as well the
     opcode length and returns an opcode set. This opcode set is a map where
@@ -166,6 +203,7 @@ for line in lines:
         
 
 write_reverse_notation(program_tree_list)
+write_infix_notation(program_tree_list)
 write_mif(opcodes, prefix_programs, opcode_width, max_length, \
                   "./mifs/test_cases.mif")
 
